@@ -16,6 +16,8 @@ To enhance your submission, you might consider developing and comparing more tha
 one model.
 
 
+
+
 Error: 
 
 server py file : 2020-12-29 10:22:34.144085: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
