@@ -35,7 +35,11 @@ produce a model that accurately predicts wind turbine power output from wind spe
 10. server.py  
 
 ## Overview  
-This project consists of four models: Linear, Polynominal 2 Degrees, Polynominal 3 degrees and finally a Keras model.  Each of the four models predict power generated based on wind speed entered. 
+This project consists of four models: Linear, Polynomial 2 Degrees, Polynomial 3 degrees and finally a Keras model.  Each of the four models predict power generated based on wind speed entered with different accuracy levels. The third model, polynomial with 3 Degrees, is a definite improvement on the the linear model and the Polynomial model with just 2 degrees. The Polynomial with 3 Degrees predictions are  closer to the actual power generated. However this model is not as accurate as the final model, Keras which is the most accurate model employed to predict power generated. This is especially true when wind speed values of 5 or less are encountered. 
+
+However Keras still has some shortcomings for these low wind speeds, when wind speed is actually zero Keras does seem to overpredict ie not predict zero power generated. I am unclear about the line between overfiting occurs and inadequate values.
+
+Finally, none of the models employed could include wind values greater than 24.5. There was limited data with wind speeds >= 24.5. But, all of the power generated values where zero for wind speeds => 24.5.  When I included these wind speed values in model training the predicted results where skewed for higher wind speeds so I decided to exclude all wind speed >= 24.5 and limit the model to predicting wind speeds of less than 24.5. This may be a major weakness in this project implementation.
 
 
 ## Cloning the repository  
