@@ -116,72 +116,85 @@
            // Adapted from https://stackoverflow.com/questions/17715309/jquery-binding-click-event-to-multiple-buttons/20846713
            $("#model-linear, #all-models").click(function(e) {
             e.preventDefault();
+            //assign input wind value to variable wind
             var wind = document.getElementById("input").value;
             console.log("Wind value inside linear mode", wind)
-            if ((wind < 24.5)|| (wind < 0)) {
+            // only predict power where wind < 24.5 or >=0
+            if ((wind <24.5)|| (wind >= 0)) {
             $.getJSON("/api/linearmodel/"+encodeURI(wind), function(data) {
                 console.log("Linear model value returned", data)
+                // assign returned predicted power value to output field
                 $('#output').val(data.value);
             });
           }
-          // only alert if not called by all-models otherwise user will get an annoying alert 4 times if they choose all-models and 
+          // only alert if not called by all-models otherwise user will get an annoying alert 4 times 
+          // if they choose all-models and 
           // range outside valid wind speeds.
            else if (e.currentTarget.id != "all-models") {
-            alert("Please enter a value between 0 and 24.5")
+            alert("Please enter a value greater than 0 and  less than 24.5")
            }
         });
 
             $("#model-polyreg, #all-models").click(function(e) {
             e.preventDefault();
+            //assign input wind value to variable wind
             var wind = document.getElementById("input").value;
             console.log("Wind value inside polyreg mode", wind)
-            if ((wind < 24.5)|| (wind < 0)){
+            // only predict power where wind < 24.5 or >=0
+            if ((wind < 24.5)|| (wind >= 0)){
             $.getJSON("/api/polyregmodel/"+encodeURI(wind), function(data) {
                 console.log("Linear model value returned", data)
+                // assign returned predicted power value to output field
                 $('#output2').val(data.value);
             });
           }
-          // alert only if function not called by all-models otherwise user will get an annoying alert 4 times if they choose all-models and 
+          // alert only if function not called by all-models otherwise user will get an annoying alert 4 times 
+          // if they choose all-models and 
           // range outside valid wind speeds.
           else if (e.currentTarget.id != "all-models") {
-            alert("Please enter a value between 0 and 24.5")
+            alert("Please enter a value greater than 0 and  less than 24.5")
            }
         });
 
        
        $("#model-polyreg3, #all-models").click(function(e) {
             e.preventDefault();
+            //assign input wind value to variable wind
             var wind = document.getElementById("input").value;
             console.log("Wind value inside polyreg3 mode", wind)
-            if ((wind < 24.5)|| (wind < 0)){
+            // only predict power where wind < 24.5 or >=0
+            if ((wind < 24.5)|| (wind >= 0)){
             $.getJSON("/api/polyreg3model/"+encodeURI(wind), function(data) {
                 console.log("Linear model value returned", data)
+                // assign returned predicted power value to output field
                 $('#output3').val(data.value);
             });
           }
           // only alert if function not called by all-models otherwise user will get an annoying alert 4 times if they choose all-models and 
           // if range outside valid wind speeds.
           else if (e.currentTarget.id != "all-models") {
-            alert("Please enter a value between 0 and 24.5")
+            alert("Please enter a value greater than 0 and  less than 24.5")
            }
         });
 
         $("#model-keras, #all-models").click(function(e) {
-            console.log("We are here...")
             e.preventDefault();
-            // get the value by id assign to var s.
+            //assign input wind value to variable wind
             var wind = document.getElementById("input").value;
             console.log(wind)
-            if ((wind < 24.5)|| (wind < 0)){
+            // only predict power where wind < 24.5 or >=0
+            if ((wind < 24.5)|| (wind >= 0)){
             $.getJSON("/api/kerasmodel/"+encodeURI(wind), function(data) {
                 console.log(data)
+                // assign returned predicted power value to output field
                 $('#output4').val(data.value);
             
             });
         }   
-          // alert regardless of which button called the function if the wind speed is invalid.
+          // alert regardless of which button called the function if the wind speed is invalid as all models should get at least one 
+          // alert if speed values out of acceptable range
             else{
-                alert("Please enter a value between 0 and 24.5")
+                alert("Please enter a value greater than 0 and  less than 24.5")
             }
         });
       //just want to try a tooltip.
