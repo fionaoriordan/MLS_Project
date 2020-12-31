@@ -35,7 +35,7 @@ produce a model that accurately predicts wind turbine power output from wind spe
 10. server.py  
 
 ## Overview  
-This project consists of four models: Linear, Polynominal 2 Degrees, Polynominal 3 degrees and finally a Keras model. 
+This project consists of four models: Linear, Polynominal 2 Degrees, Polynominal 3 degrees and finally a Keras model.  Each of the four models predict power generated based on wind speed entered. 
 
 
 ## Cloning the repository  
@@ -73,7 +73,7 @@ flask run
 -- In your browser navigate 
 
 ## In the Browser
-Enter a random speed wind of your choice from 0 to 24.5 and click on the desired model button. The application will predict the power generated from the wind speed entered. 
+Enter a random speed wind of your choice from 0 to 24.5 and click on the desired model button or alternatively 'All Models' button. The application will predict the power generated from the wind speed entered for the particular model clicked or for all models depending on the button selected. 
   
 Best Wishes, Fiona 
 

@@ -113,11 +113,7 @@
 
     <script>
           
-
-
-
-
-           // Adapted from stack overflow posts.
+           // Adapted from https://stackoverflow.com/questions/17715309/jquery-binding-click-event-to-multiple-buttons/20846713
            $("#model-linear, #all-models").click(function(e) {
             e.preventDefault();
             var wind = document.getElementById("input").value;
@@ -135,7 +131,6 @@
            }
         });
 
-            // Adapted from stack overflow posts.
             $("#model-polyreg, #all-models").click(function(e) {
             e.preventDefault();
             var wind = document.getElementById("input").value;
@@ -153,7 +148,7 @@
            }
         });
 
-       // Adapted from stack overflow posts.
+       
        $("#model-polyreg3, #all-models").click(function(e) {
             e.preventDefault();
             var wind = document.getElementById("input").value;
@@ -164,8 +159,8 @@
                 $('#output3').val(data.value);
             });
           }
-          // only alert if not called by all-models otherwise user will get an annoying alert 4 times if they choose all-models and 
-          // range outside valid wind speeds.
+          // only alert if function not called by all-models otherwise user will get an annoying alert 4 times if they choose all-models and 
+          // if range outside valid wind speeds.
           else if (e.currentTarget.id != "all-models") {
             alert("Please enter a value between 0 and 24.5")
            }
@@ -189,7 +184,7 @@
                 alert("Please enter a value between 0 and 24.5")
             }
         });
-
+      //just want to try a tooltip.
       $(function () {
         $('[data-toggle="tooltip"]').tooltip()
         })
