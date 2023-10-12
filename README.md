@@ -68,13 +68,13 @@ In your terminal navigate to the the folder where you cloned this repository.
 - Linux terminal  
 export FLASK_APP=server.py
 python3 -m flask run  (I am guessing you should use Python 3.8.3  as I dont have access to LINUX I cant say for sure.)
--- Windows  
+-  Windows  
 set FLASK_APP=server.py  
 python -m flask run  
--- MAC
+-  MAC
 export FLASK_APP=server.py
 flask run
--- In your browser navigate 
+
 
 ## In the Browser
 Enter a random speed wind of your choice from 0 to 24.5 and click on the desired model button or alternatively 'All Models' button. The application will predict the power generated from the wind speed entered for the particular model clicked or for all models depending on the button selected. 
